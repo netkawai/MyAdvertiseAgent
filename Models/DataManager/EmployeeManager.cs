@@ -20,7 +20,7 @@ namespace MyAdvertiseAgent.Models.DataManager
 
         public Employee Get(long id)
         {
-            return _employeeContext.Employees.FirstOrDefault(e => e.EmployeeId == id);
+            return _employeeContext.Employees.FirstOrDefault(e => e.Id == id);
         }
 
         public void Add(Employee entity)
