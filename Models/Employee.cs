@@ -6,10 +6,11 @@ namespace MyAdvertiseAgent.Models
 {
     public class Employee
     {
+        [Required]
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long EmployeeId { get; set; }
-
+        public long Id { get; set; }
+        [Required]
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
@@ -18,6 +19,13 @@ namespace MyAdvertiseAgent.Models
 
         public string PhoneNumber { get; set; }
 
+        public Boolean HasAdmin { get; set; }
+
+        [Required]
         public string Email { get; set; }
+
+        // This should be hidden in UI
+        [Required]
+        public string Credential { get; set; }
     }
 }

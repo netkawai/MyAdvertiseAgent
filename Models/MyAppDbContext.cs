@@ -12,11 +12,15 @@ namespace MyAdvertiseAgent.Models
 
         public DbSet<Employee> Employees { get; set; }
 
+        public DbSet<ContentTypePrice> ContentPrices { get; set; }
+        public DbSet<PageTypePrice> PagePrices { get; set; }
+        public DbSet<AdvOrder> AdvOrders { get; set; }
+
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Employee>().HasData(new Employee
             {
-                EmployeeId = 1,
                 FirstName = "Uncle",
                 LastName = "Bob",
                 Email = "uncle.bob@gmail.com",
@@ -25,7 +29,6 @@ namespace MyAdvertiseAgent.Models
 
             }, new Employee
             {
-                EmployeeId = 2,
                 FirstName = "Jan",
                 LastName = "Kirsten",
                 Email = "jan.kirsten@gmail.com",
